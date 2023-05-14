@@ -13,7 +13,7 @@ const fetchHeroes = async (value) => {
   try {
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data.data.results);
+    //console.log(data.data.results);
     return data.data.results;
   } catch (err) {
     console.error(err);
@@ -37,8 +37,8 @@ const fetchHero = async (id) => {
   try {
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
-    return data;
+    //console.log(data.data.results);
+    return data.data.results;
   } catch (err) {
     console.error(err);
     return;
