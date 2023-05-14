@@ -17,7 +17,38 @@ const HeroDetails = () => {
   console.log(hero);
   if (!hero) return;
 
-  return <div>HeroDetails {id}</div>;
+  return (
+  <div className="container large">
+      <div className="hero__details-container">
+        <img
+          src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
+          alt="hero image full size"
+        />
+        <div className="hero__details">
+          <h4>Name</h4>
+          <p>{hero.name}</p>
+          {hero.description ? (
+            <>
+              <h4>Description</h4>
+              <p>{hero.description}</p>
+            </>
+          ) : null}
+          <div className="hero__series">
+            <h4>Series</h4>
+            <ul>
+              {hero.series.items
+                ? hero.series.items.map((title) => (
+                    <li key={Math.random() * 1000}>{title.name}</li>
+                  ))
+                : null}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  //<div>HeroDetails {id}</div>;
 };
 
 export default HeroDetails;
