@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import fetchHeroes from "../lib/utils";
-
+//import fetchHeroes from "../lib/utils";
+import { fetchHeroes, fetchHero } from "../lib/utils";
 
 const SearchBar = ({ setter }) => {
   
